@@ -1,17 +1,18 @@
-# fashion-sentiment-analysis
-# E-Commerce Customer Review Sentiment Analysis
+# Fashion Sentiment Analysis
+
+## E-Commerce Customer Review Sentiment Analysis
 
 ## Project Overview
 
 This project focuses on analyzing customer reviews from an e-commerce clothing platform and classifying them into three sentiment categories: **Positive, Neutral, and Negative**.
 
-The goal is to understand customer opinions, identify sentiment patterns, and extract meaningful insights from textual customer feedback using Natural Language Processing (NLP) and Machine Learning.
+The objective is to understand customer opinions, identify sentiment patterns, evaluate product performance, and extract meaningful business insights using Natural Language Processing (NLP) and Machine Learning.
 
 ## Dataset
 
 - **Dataset:** Women's E-Commerce Clothing Reviews
 - **Source:** [Hugging Face Datasets](https://huggingface.co/datasets/chibifire/kaggle-womens-ecom-clothing-reviews)
-- Contains customer reviews and associated product ratings.
+- Contains customer reviews, product information, ratings, and recommendation indicators.
 
 ## Technologies Used
 
@@ -19,49 +20,70 @@ The goal is to understand customer opinions, identify sentiment patterns, and ex
 - Pandas & NumPy
 - Scikit-learn
 - Matplotlib & Seaborn
-- NLP
+- Natural Language Processing (NLP)
 - TF-IDF Vectorization
 - Support Vector Machine (SVM)
 
 ## Project Workflow
 
-1. **Data Loading:** Loaded the e-commerce customer reviews dataset.
-2. **Data Preprocessing:** Cleaned and prepared textual review data.
-3. **Exploratory Data Analysis:** Examined sentiment distribution and review patterns.
-4. **Feature Extraction:** Applied TF-IDF to convert textual reviews into numerical features.
-5. **Model Training:** Trained a Support Vector Machine (SVM) classifier.
-6. **Hyperparameter Tuning:** Optimized model parameters to improve classification performance.
-7. **Model Evaluation:** Evaluated performance using accuracy, precision, recall, and F1-score.
+1. **Data Loading:** Loaded the customer reviews dataset.
+2. **Data Cleaning:** Handled missing values and prepared the review data.
+3. **Exploratory Data Analysis:** Analyzed sentiment distribution, ratings, and customer review patterns.
+4. **Text Preprocessing:** Cleaned and prepared textual reviews for NLP.
+5. **Feature Extraction:** Applied TF-IDF vectorization to convert text into numerical features.
+6. **Model Training:** Trained and compared multiple machine learning classifiers.
+7. **Hyperparameter Tuning:** Optimized the SVM model.
+8. **Model Evaluation:** Evaluated performance using accuracy, precision, recall, and F1-score.
+9. **Sentiment Prediction:** Classified customer reviews into sentiment categories.
+10. **Business Analysis:** Analyzed product recommendations, category performance, and customer complaints.
 
 ## Model Performance
 
 The tuned SVM model achieved the following results:
 
-| Metric         |  Score |
-| -------------- | -----: |
-| Accuracy       | 82.89% |
+| Metric | Score |
+|---|---:|
+| Accuracy | 82.89% |
 | Macro F1-Score | 0.6354 |
 
-The project also highlights the challenges of classifying minority sentiment categories, particularly Neutral and Negative reviews, due to class imbalance.
+The results highlight the challenges of classifying minority sentiment categories, particularly Neutral and Negative reviews, due to class imbalance.
 
-## Saved Model
+## Business Analysis & Insights
 
-The trained model pipeline is saved as:
+The project explores customer recommendation patterns and product performance across different dimensions.
 
-`sentiment_pipeline.pkl`
+Key findings:
 
-The saved pipeline can be reused for sentiment prediction without repeating the entire training process.
+- **Sentiment Distribution:** Positive reviews dominate the dataset.
+- **Recommendation Patterns:** Positive reviews have a substantially higher recommendation rate than Neutral and Negative reviews.
+- **Department Analysis:** Bottoms recorded the highest recommendation rate at 84.95%.
+- **Category Analysis:** Lounge recorded the highest recommendation rate at 85.80%, while Trend had the lowest at 74.58%.
+- **Age Group Analysis:** Customers aged 50–60 and 60+ showed recommendation rates of 83.69% and 85.19%, respectively.
+- **Customer Complaints:** Complaint patterns were analyzed to identify categories requiring further attention.
 
 ## Repository Structure
 
 ```text
-ecommerce-sentiment-analysis/
+fashion-sentiment-analysis/
 │
+├── README.md
 ├── sentiment_analysis.ipynb
 ├── sentiment_pipeline.pkl
 ├── requirements.txt
-└── README.md
+│
+└── outputs/
+    ├── category_performance_analysis.csv
+    ├── customer_complaint_summary.csv
+    └── category_complaint_analysis.csv
 ```
+
+## Saved Model
+
+The trained machine learning pipeline is saved as:
+
+`sentiment_pipeline.pkl`
+
+It can be reused for sentiment prediction without repeating the entire model training process.
 
 ## Installation
 
@@ -77,7 +99,7 @@ Navigate to the project directory:
 cd ecommerce-sentiment-analysis
 ```
 
-Install dependencies:
+Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
@@ -87,9 +109,14 @@ pip install -r requirements.txt
 
 - Improve classification of minority sentiment categories.
 - Experiment with advanced NLP techniques.
-- Deploy the trained model using Streamlit.
+- Deploy the sentiment classification model using Streamlit.
 - Develop an interactive sentiment analysis dashboard.
 
 ## Conclusion
 
-This project demonstrates how NLP and machine learning can be applied to customer feedback analysis. It provides a foundation for understanding customer sentiment and generating insights that can support data-driven business decisions.
+This project demonstrates how NLP and Machine Learning can be applied to customer feedback analysis. By combining sentiment classification with recommendation and complaint analysis, it provides insights into customer preferences and product performance that can support data-driven business decisions.
+
+
+
+
+
